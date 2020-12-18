@@ -1,0 +1,51 @@
+{
+  "name": "code-challenge-factorial",
+  "version": "1.0.0",
+  "description": "Automation code challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "cypress:open": "cypress open",
+    "report:merge": "mochawesome-merge --reportDir cypress/results/json > cypress/results/mochawesome-bundle.json",
+    "report:generate": "marge cypress/results/mochawesome-bundle.json -o cypress/reports/html & npm run report:html",
+    "report:html": "mv cypress/reports/html/cypress/results/mochawesome*.html cypress/reports/html",
+    "report:copyScreenshots": "cp -r cypress/screenshots cypress/reports/html/screenshots",
+    "report-linux": "",
+    "report-mac": "",
+    "report-windows": "node cypress/cucumber-json/html-report-generator.js && npm run open-report",
+    "open-report": "start cypress/cucumber-json/report/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krantos/code-challenge-factorial.git"
+  },
+  "author": "Marcos Riveros",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krantos/code-challenge-factorial/issues"
+  },
+  "homepage": "https://github.com/krantos/code-challenge-factorial#readme",
+  "devDependencies": {
+    "@testing-library/cypress": "^7.0.3",
+    "cypress": "^6.1.0",
+    "cypress-cucumber-preprocessor": "^4.0.0",
+    "cypress-multi-reporters": "^1.4.0",
+    "eslint": "^7.15.0",
+    "eslint-plugin-cypress": "^2.11.2",
+    "mocha": "^8.2.1",
+    "mochawesome": "^6.2.1",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.1.0",
+    "multiple-cucumber-html-reporter": "^1.18.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  },
+  "dependencies": {}
+}

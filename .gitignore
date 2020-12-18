@@ -1,0 +1,15 @@
+# IDE
+.idea/
+
+# Node Modules
+node_modules/
+
+# Package Lock
+package-lock.json
+
+# Screenshots
+cypress/screenshots/
+
+# Reports
+cypress/cucumber-json/*.json
+cypress/cucumber-json/report
