@@ -5,7 +5,7 @@
 
 **For the bug report go to [Bug Report](./bug-report/README.md).**
 
-**For the api calls documentation go to [Api Calls](./api-calls/READMIN.MD).**
+**For the api calls documentation go to [Api Calls](./api-calls/README.md).**
 
 ## Web Application
 
