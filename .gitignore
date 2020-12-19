@@ -12,4 +12,6 @@ cypress/screenshots/
 
 # Reports
 cypress/cucumber-json/*.json
-cypress/cucumber-json/report
+cypress/cucumber-json/report/
+cypress/result/
+cypress/report/

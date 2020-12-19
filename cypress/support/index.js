@@ -14,14 +14,11 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
-const url = require('url')
-
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
+import './commands'
 import addContext from 'mochawesome/addContext';
-import * as path from "path";
 
 Cypress.on('test:after:run', (test, runnable) => {
   if (test.state === 'failed') {
@@ -42,7 +39,7 @@ Cypress.on('test:after:run', (test, runnable) => {
         Cypress.spec.name
     }/${fullTestName} (failed).png`
 
-    const cleanUrl = url.pathToFileURL(imageUrl);
+    const cleanUrl = imageUrl.replace('#', '');
 
     addContext({ test }, cleanUrl)
 
