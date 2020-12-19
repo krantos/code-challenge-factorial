@@ -95,13 +95,13 @@ This is a different report from the previous one.
 
 ## Extra
 
-Run a test with a mocked server in a headless browser with:
-
 First don't forget to clean the reports, if not, you will mix previous results.
 ```bash
 # clean reports
 npm run clean:reports
 ```
+
+Run a test with a mocked server in a headless browser with:
 
 ```bash
 node tests/mocked-server.js
@@ -121,7 +121,7 @@ Feature: Calculate the factorial of a number
 
   Scenario Outline: Calculate the factorial of a positive integer
     Given I open the Greatest Factorial Calculator
-    And enter <number> number
+    And enter <number> as number
     When calculation is performed
     Then I should receive: 'The factorial of <number> is: <result>'
 
@@ -136,19 +136,19 @@ Feature: Calculate the factorial of a number
 
   Scenario: Calculate the factorial of a negative integer
     Given I open the Greatest Factorial Calculator
-    And enter -5 number
+    And enter -5 as number
     When calculation is performed
     Then I should receive: 'Please enter a positive integer'
 
   Scenario: Calculate the factorial of a decimal number
     Given I open the Greatest Factorial Calculator
-    And enter 2.5 number
+    And enter 2.5 as number
     When calculation is performed
     Then I should receive: 'Please enter an integer'
 
   Scenario: Calculate the factorial of a letter
     Given I open the Greatest Factorial Calculator
-    And enter e number
+    And enter e as number
     When calculation is performed
     Then I should receive: 'Please enter an integer'
 ```
@@ -156,7 +156,7 @@ Feature: Calculate the factorial of a number
 ### factorial-ui.feature
 
 ```cucumber
-Feature: The Greatest Factorial Calculator UI
+Feature: The Greatest Factorial Calculator UI Elements
 
   Background:
     Given I open the Greatest Factorial Calculator
@@ -165,7 +165,8 @@ Feature: The Greatest Factorial Calculator UI
     When the calculator load is complete
     Then I see 'Factorial!' in the title
 
-    Scenario: The calculator has an available input
+  Scenario: The calculator has an available input field
+      When the calculator load is complete
       Then I should have a place to enter a number
 
   Scenario Outline: The calculator presents the UI elements
@@ -190,9 +191,9 @@ Feature: Get more information about the great Calculator
 
   Scenario: Get the Terms and conditions information
     When I ask for the 'Terms and Conditions' information
-    Then I should receive the 'Terms and Conditions' information under terms
+    Then I should receive the 'Terms and Conditions' information under terms url
 
   Scenario: Get the Privacy information
     When I ask for the 'Privacy' information
-    Then I should receive the 'Privacy' information under privacy
+    Then I should receive the 'Privacy' information under privacy url
 ```

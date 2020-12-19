@@ -1,4 +1,4 @@
-Feature: The Greatest Factorial Calculator UI
+Feature: The Greatest Factorial Calculator UI Elements
 
   Background:
     Given I open the Greatest Factorial Calculator
@@ -7,7 +7,8 @@ Feature: The Greatest Factorial Calculator UI
     When the calculator load is complete
     Then I see 'Factorial!' in the title
 
-    Scenario: The calculator has an available input
+  Scenario: The calculator has an available input field
+      When the calculator load is complete
       Then I should have a place to enter a number
 
   Scenario Outline: The calculator presents the UI elements
