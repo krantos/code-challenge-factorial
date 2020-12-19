@@ -10,7 +10,7 @@
     "report:generate": "marge ./cypress/result/mochawesome-bundle.json -o cypress/report/index -i & npm run report:copyScreenshots",
     "report:copyScreenshots": "cp -r cypress/screenshots cypress/report/",
     "report": "node cypress/cucumber-json/html-report-generator.js",
-    "report:clean": "rm cypress/cucumber-json/*.json & rm -r cypress/result & rm -r cypress/report & rm -r cypress/screenshots"
+    "report:clean": "rm cypress/cucumber-json/*.json & rm -r cypress/cucumber-json/report & rm -r cypress/result & rm -r cypress/report & rm -r cypress/screenshots"
   },
   "repository": {
     "type": "git",
