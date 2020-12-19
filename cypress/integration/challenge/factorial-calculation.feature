@@ -2,7 +2,7 @@ Feature: Calculate the factorial of a number
 
   Scenario Outline: Calculate the factorial of a positive integer
     Given I open the Greatest Factorial Calculator
-    And enter <number> number
+    And enter <number> as number
     When calculation is performed
     Then I should receive: 'The factorial of <number> is: <result>'
 
@@ -17,18 +17,18 @@ Feature: Calculate the factorial of a number
 
   Scenario: Calculate the factorial of a negative integer
     Given I open the Greatest Factorial Calculator
-    And enter -5 number
+    And enter -5 as number
     When calculation is performed
     Then I should receive: 'Please enter a positive integer'
 
   Scenario: Calculate the factorial of a decimal number
     Given I open the Greatest Factorial Calculator
-    And enter 2.5 number
+    And enter 2.5 as number
     When calculation is performed
     Then I should receive: 'Please enter an integer'
 
   Scenario: Calculate the factorial of a letter
     Given I open the Greatest Factorial Calculator
-    And enter e number
+    And enter e as number
     When calculation is performed
     Then I should receive: 'Please enter an integer'

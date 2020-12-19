@@ -4,7 +4,7 @@ When('I ask for the {string} information', (text) => {
   cy.contains(text).click()
 });
 
-Then('I should receive the {string} information under {word}', (title, path) => {
+Then('I should receive the {string} information under {word} url', (title, path) => {
   cy.contains(title).should('be.visible');
   cy.url().should('include', path);
 })

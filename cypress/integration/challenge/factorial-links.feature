@@ -5,8 +5,8 @@ Feature: Get more information about the great Calculator
 
   Scenario: Get the Terms and conditions information
     When I ask for the 'Terms and Conditions' information
-    Then I should receive the 'Terms and Conditions' information under terms
+    Then I should receive the 'Terms and Conditions' information under terms url
 
   Scenario: Get the Privacy information
     When I ask for the 'Privacy' information
-    Then I should receive the 'Privacy' information under privacy
+    Then I should receive the 'Privacy' information under privacy url

@@ -1,6 +1,6 @@
 import {And, When, Then} from "cypress-cucumber-preprocessor/steps";
 
-And('enter {word} number', (number) => {
+And('enter {word} as number', (number) => {
   cy.get('#number').type(number);
 });
 
