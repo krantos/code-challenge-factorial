@@ -53,7 +53,7 @@ node tests/e2e-run-tests.js
 
 **3. Generate the report**
 
-To get the report, first we need to merge each report generated per each feature file. 
+To get the report:
 
 ```bash
 # merge the json generated and generate a new report
@@ -84,9 +84,6 @@ npm run cypress:open
 Generate the report with
 
 ```bash
-# clean previous reports
-npm run clean:reports
-
 # generate the second report
 npm run ui:report
 ```
@@ -96,16 +93,15 @@ This is a different report from the previous one.
 
 <img src="/images/report-2.png" width="650px">
 
-**6. Clean the reports and screenshots**
-
-```bash
-# clean the reports and screenshots
-npm run clean:reports
-```
-
 ## Extra
 
 Run a test with a mocked server in a headless browser with:
+
+First don't forget to clean the reports, if not, you will mix previous results.
+```bash
+# clean reports
+npm run clean:reports
+```
 
 ```bash
 node tests/mocked-server.js
@@ -117,14 +113,9 @@ And get the report with
 npm run report
 ```
 
-Finally don't forget to clean the reports, if not, you will mix previous results.
-```bash
-# clean reports
-npm run clean:reports
-```
-
 ## Features described with Cucumber
 
+### factorial-calculation.feature
 ```cucumber
 Feature: Calculate the factorial of a number
 
@@ -160,4 +151,48 @@ Feature: Calculate the factorial of a number
     And enter e number
     When calculation is performed
     Then I should receive: 'Please enter an integer'
+```
+
+### factorial-ui.feature
+
+```cucumber
+Feature: The Greatest Factorial Calculator UI
+
+  Background:
+    Given I open the Greatest Factorial Calculator
+
+  Scenario: The calculator has a cool title
+    When the calculator load is complete
+    Then I see 'Factorial!' in the title
+
+    Scenario: The calculator has an available input
+      Then I should have a place to enter a number
+
+  Scenario Outline: The calculator presents the UI elements
+    When the calculator load is complete
+    Then I should see a <role> with <text>
+
+    Examples:
+    | role    | text                                  |
+    | button  | 'Calculate!'                          |
+    | h1      | 'The greatest factorial calculator!'  |
+    | a       | 'Terms and Conditions'                |
+    | a       | 'Qxf2 Services'                       |
+
+```
+
+### factorial-links.feature
+```cucumber
+Feature: Get more information about the great Calculator
+
+  Background:
+    Given I open the Greatest Factorial Calculator
+
+  Scenario: Get the Terms and conditions information
+    When I ask for the 'Terms and Conditions' information
+    Then I should receive the 'Terms and Conditions' information under terms
+
+  Scenario: Get the Privacy information
+    When I ask for the 'Privacy' information
+    Then I should receive the 'Privacy' information under privacy
 ```

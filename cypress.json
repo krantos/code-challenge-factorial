@@ -2,6 +2,6 @@
   "testFiles": "**/*.{feature,features}",
   "reporter": "cypress-multi-reporters",
   "reporterOptions": {
-    "configFile": "tests/reporter-config.json"
+    "configFile": "./lstests/reporter-config.json"
   }
 }
