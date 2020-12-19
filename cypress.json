@@ -1,5 +1,5 @@
 {
-  "testFiles": "**/*.{feature,features}",
+  "testFiles": "**/*.{feature,features,js}",
   "reporter": "cypress-multi-reporters",
   "reporterOptions": {
     "configFile": "tests/reporter-config.json"

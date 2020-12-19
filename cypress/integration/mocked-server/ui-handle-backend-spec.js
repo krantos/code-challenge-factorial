@@ -15,7 +15,12 @@ describe('Test with mocked backend', () => {
 
       cy.get('#resultDiv')
           .should('be.visible')
-          .and('contain', `The factorial of 3 is: ${file.answer}`)
+          .then((result) => {
+            const pElement = result.get(0);
+            const text = pElement.innerText;
+            const number = text.replace('The factorial of 3 is: ', '');
+            expect(number).be.a('number');
+          });
     })
     cy.screenshot();
   })

@@ -8,7 +8,7 @@ cypress.run({
   },
   screenshotsFolder: 'cypress/screenshots/',
   testFiles: "**/*.js",
-  browser: 'firefox',
+  headless: true,
   spec: 'cypress/integration/mocked-server/*',
   config: {
     baseUrl: 'http://qainterview.pythonanywhere.com/',
@@ -17,8 +17,9 @@ cypress.run({
 })
     .then((results) => {
       console.log(results);
-
+      console.log('run tests completed');
     })
     .catch((err) => {
+      console.log('something went wrong')
       console.log(err);
     });

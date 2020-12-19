@@ -9,7 +9,7 @@ cypress.run({
   },
   screenshotsFolder: 'cypress/screenshots/',
   testFiles: "**/*.{feature,features}",
-  browser: 'chrome',
+  browser: 'firefox',
   spec: './cypress/integration/challenge/**.feature',
   config: {
     baseUrl: 'http://qainterview.pythonanywhere.com/',
@@ -17,16 +17,16 @@ cypress.run({
   }
 })
     .then((results) => {
-      console.log(results);
-
       let foundFiles = screenshotList('cypress/screenshots');
       foundFiles.forEach( f => {
         fs.renameSync(f.oldSrc, f.newSrc);
-      })
+      });
 
+      return;
     })
     .catch((err) => {
       console.log(err);
+      return;
     });
 
 const screenshotList = (dir, filelist = []) => {
