@@ -21,32 +21,33 @@ and present the result to the user.
 
 The system is composed by two sub-systems.
 
-Web Application: which has the form to enter the number and ask for the calculation
-and present the result.
+  * Web Application: which has the form to enter the number, ask for the calculation, and present the result.
 
-Server: who receives the petition to calculate the entered number and returns
+  * Server: who receives the petition to calculate the factorial and return
 the result.
 
 **Bug Report**
 
-These reports are generic, each one contains the needed information.
-Consider that they can vary for these reasons:
+These reports are generic, each one contains the needed information to be reproduced.
+
+Consider that they can vary in form and details depending on:
+
 * Report tool choose
 * Team agreement on how to report a bug
-* If the bug should be tagged with an Epic or not
-* If the team requires the debug report also
+* If, the bug should be tagged with an Epic or not
+* If, the team requires the Debug report
 
 **Expected / Suggestions**
 
-Each Expected behavior/ui made for each bug, is only a suggestion. Those suggestions should be validated and approved by the Product Owner before made the changes. Could be the scrum team who takes the decision. Or the Force.
+Each Expected point for each bug, is only a suggestion. This should be validated and approved by the Product Owner before made the changes. Could be the Scrum team who takes the decision. Or the Force.
 
 
-***The bugs are not in a particular order but, with the correct tool they could be ordered by priority or severity***
+***The bugs are not in a particular order but, with a tool they could be ordered by priority or severity***
 
 ---
 # Bugs Found
 
-## Bug 1: Web app cannot parse server result response for a range of numbers (between 170 and 990) 
+## Bug 1: (UI) Web app cannot parse the result sent from the server. It happens for a range of numbers (between 170 and 990) 
 
 * **Reporter:** Marcos
 * **Date:** 12/18/2020
@@ -59,8 +60,8 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 * **Priority:** HIGH
 * **Status:** New
 * **Severity:** BLOCKER
-* **Expected:** Show the result of the factorial calculation for big numbers
-* **Current:** Result displayed says 'Infinity'
+* **Expected:** Display the result of the factorial calculation for numbers between 170 and 990
+* **Current:** The result displayed says 'Infinity'
 * **Type:** Functional
 
 ### Steps to reproduce
@@ -68,24 +69,24 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 1. Open any browser
 2. Navigate to this url: http://qainterview.pythonanywhere.com/
 3. Open the web console (i.e: press f12)
-4. Click on the Input text where it says: "Enter an Integer"
+4. Click on the input field where it says: "Enter an Integer"
 5. Enter a positive integer between 170 and 990 | (170 < integer > 990)
 6. Click on the "Calculate!" green button
-7. Validate that the result is displayed
-8. **Expected:** show the result with scientific notation (example) 1.35393750e+156
+7. Validate that the correct result is displayed (check with a calculator)
+8. **Expected:** display the result with scientific notation, example: 1.35393750e+156
 9. **Current:** the displayed results says 'Infinity' 
 
 ### Attachments/
 <img src="/bug-report/images/bug-1.gif" width="650px">
 
 
-## Bug 2: Internal Server Error when a negative number is sent to calculate
+## Bug 2: (Server) Internal Server Error when a negative number is sent
 
 
 * **Reporter:** Marcos
 * **Date:** 12/18/2020
 * **Product:** Factorial Calculator
-* **Platform:** Web
+* **Platform:** Server
 * **Tested in:**
     * **System:** Windows 10 Enterprise
     * **Browser:** Postman
@@ -95,7 +96,7 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 * **Severity:** CRITICAL
 * **Expected:** When a negative number is sent to calculate its factorial, then the server returns: 500 Internal Server Error
 * **Current:** In this case could be a 400 status code with an error message. (Validate with the PO)
-* **Type:** No Functional
+* **Type:** Functional 
 
 ### Steps to reproduce
 
@@ -107,8 +108,8 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 6. Add Key: number
 7. Add Value: -1
 8. Send the request
-9. Validate that response is an eror (validate with the PO)
-10. **Expected:** Status code 400 - Bad Request or a message indicating the error (validate with the PO)
+9. Validate that response is an error (validate with the PO)
+10. **Expected:** Status code 400 - Bad Request, or a message indicating the error (validate with the PO)
 11. **Current:** Status code 500 - Internal Server Error
 
 ### Attachments
@@ -116,33 +117,33 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 <img src="/bug-report/images/bug-2.png" width="650px">
 
 
-## Bug 3: Internal Server Error when integers greater than 989 are entered to calculate 
+## Bug 3: (Server) Internal Server Error when integers greater than 989 are introduced to calculate. Limit
 
 
 * **Reporter:** Marcos
 * **Date:** 12/18/2020
 * **Product:** Factorial Calculator
-* **Platform:** Web
+* **Platform:** Server
 * **Tested in:**
     * **System:** Windows 10 Enterprise
-    * **Browser:** Postman
-    * **Version:** Postman v7.36.0
+    * **Browser:** Firefox Browser Developer
+    * **Version:** 85.0b1 (64-bit)
 * **Priority:** HIGH
 * **Status:** New
-* **Severity:** CRITICAL
-* **Expected:** When a negative number is sent to calculate its factorial, then the server returns: 500 Internal Server Error
-* **Current:** In this case could be a 400 status code with an error message. (Validate with the PO)
-* **Type:** No Functional
+* **Severity:** BLOCKER
+* **Expected:** Could be a 400 status code with an error message that the limit was reached, or the result with scientific notation (Validate with the PO)
+* **Current:** The server returns: 500 Internal Server Error
+* **Type:** Functional
 
 ### Steps to reproduce
 
 1. Open any browser
 2. Navigate to this url: http://qainterview.pythonanywhere.com/
 3. Open the web console (i.e: press f12)
-4. Click on the Input text where it says: "Enter an Integer"
+4. Click on the input field where it says: "Enter an Integer"
 5. Enter a positive integer greater than 989
 6. Click on the "Calculate!" green button
-7. **Expected:** Status code 400 - Bad Request or a message indicating the error (validate with the PO)
+7. **Expected:** Could be a 400 status code with an error message that the limit was reached, or the result with scientific notation (Validate with the PO)
 8. **Current:** Status code 500 - Internal Server Error
 
 ### Attachments
@@ -151,7 +152,7 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 
 
 
-## Bug 3: No error message while entering a negative number for factorial calculation
+## Bug 4: (UI) No error message when calculation is asked for a negative number
 
 
 ### Information
@@ -164,32 +165,31 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
     * **System:** Windows 10 Enterprise
     * **Browser:** Firefox Browser Developer
     * **Version:** 85.0b1 (64-bit)
-* **Priority:** HIGH
+* **Priority:** MEDIUM
 * **Status:** New
-* **Severity:** CRITICAL
-* **Expected:** An error message indicating that the factorial calculation its only for positive integers.
-* **Current:** Web/UI: No message. No signs of life
+* **Severity:** MINOR
+* **Expected:** An error message indicating that the factorial calculation its only for positive integers. (ask for validation about the message to be displayed)
+* **Current:** UI doesn't display any message or change / As the number was not validate the POST request to the server is performed.
 * **Type:** Functional
 
 ### Steps to reproduce:
 
 1. Open any browser
-2. Open the network (tab) monitor in the broser
-3. Navigate to this url: http://qainterview.pythonanywhere.com/
-4. Click on the Input text where it says: "Enter an Integer"
-5. Enter a negative integer number lower than 0 (i.e: -1)
-6. Click on the "Calculate!" green button
-7. **Expected:**
+2. Navigate to this url: http://qainterview.pythonanywhere.com/
+3. Click on the input field where it says: "Enter an Integer"
+4. Enter a negative integer (i.e: -5)
+5. Click on the "Calculate!" green button
+6. **Expected:**
     1. Any type of message indicating that the factorial calculation is only for positive integers. (Validate with the PO)
-    2. No POST request to the server due to that the number doesn't comply with the policy
-8. **Current:** No message. No signs of life 
+    2. No POST request action to the server due to that the number doesn't comply with the rules
+7. **Current:** No message. No signs of life 
 
 ### Attachments:
 
 <img src="/bug-report/images/bug-4.gif" width="650px">
 
 
-## Bug 4: Console is loggin development info
+## Bug 5: (UI) Web App is printing development information in the console
 
 
 ### Information
@@ -205,20 +205,20 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 * **Priority:** HIGH
 * **Status:** New
 * **Severity:** Major - expose internal information
-* **Expected:** No logs in the web console
+* **Expected:** No logs in the web console. No console.log() in production code
 * **Current:** Web/UI: Logs information (see steps)
-* **Type:** No Functional - Security issue as expose development information
+* **Type:** No Functional - Could be Security issue as it expose development information
 
 ### Steps to reproduce:
 
 1. Open any browser
 2. Navigate to this url: http://qainterview.pythonanywhere.com/
 3. Open the web console (i.e: press f12)
-4. Click on the Input text where it says: "Enter an Integer"
+4. Click on the input field where it says: "Enter an Integer"
 5. Enter a positive integer number lower than 10 (i.e: 5)
-6. Click on the "Calculate!" green button and, validate there is no information logged in the web console
-7. **Expected:** In the web console tab no internal information logged
-8. **Current:** It logs interal information. 
+6. Click on the "Calculate!" green button and, validate that there is no information logged in the web console tab
+7. **Expected:** No logs in the web console. No console.log() in production code
+8. **Current:** Per calculation the web app prints development information 
    1. The value entered in the input field 
    2. A hello message which says: 'Hello! I am in the done part of the ajax call'
    3. A javascript object that includes the server response.
@@ -226,7 +226,7 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 
 9. **(From step 4)** Enter a letter in the input field
 10. Click on the "Calculate!" green button and validate there is no information logged in the web console
-11. **Expected:** No information logged in the web console.
+11. **Expected:** No logs in the web console. No console.log() in production code.
 12. **Current:** The entered value is logged
 
 ### Attachments:
@@ -234,7 +234,7 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 <img src="/bug-report/images/bug-5.gif" width="650px">
 
 
-## Bug 5: Typo in the Page Title
+## Bug 6: (UI) Typo in the Page Title
 
 
 ### Information
@@ -267,8 +267,7 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 <img src="/bug-report/images/title.png" width="750px">
 
 
-## Bug 6: Pressing Intro after enter a number doesn't produce an action
-
+## Bug 7: (UI) Pressing Intro on the keyboard, after enter a number, doesn't perform the calculation
 
 ### Information
 
@@ -280,10 +279,10 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
     * **System:** Windows 10 Enterprise
     * **Browser:** Firefox Browser Developer
     * **Version:** 85.0b1 (64-bit)
-* **Priority:** Medium (Validate with the PO)
+* **Priority:** MEDIUM (Validate with the PO)
 * **Status:** New
-* **Severity:** Major (Validate with the PO)
-* **Expected:** The factorial calculation is performed and show the result (validate with the PO)
+* **Severity:** MAJOR (Validate with the PO)
+* **Expected:** Pressing the Intro key performs the factorial calculation
 * **Current:** No actions performed
 * **Type:** Functional
 
@@ -291,10 +290,10 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 
 1. Open any browser
 2. Navigate to this url: http://qainterview.pythonanywhere.com/
-3. Click on the Input text where it says: "Enter an Integer"
+3. Click on the input field where it says: "Enter an Integer"
 4. Enter a positive integer number lower than 10. (i.e: 5)
-5. Press the key Intro
-6. **Expected:** The factorial calculation is performed and show the result
+5. Press the Intro key on the keyboard
+6. **Expected:** The factorial calculation is performed, and the result is shown
 7. **Current:** No actions performed
 
 ### Attachments:
@@ -302,8 +301,7 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 <img src="/bug-report/images/intro_key.gif" width="750px">
 
 
-## Bug 7: Arrow button like icon simulates a Button but doesn't perform any action (could be a bug - needs confirmation)
-
+## Bug 8: (UI) Arrow icon simulates to be a Button but, it doesn't perform any action (could be a bug - needs confirmation)
 
 ### Information
 
@@ -315,22 +313,22 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
     * **System:** Windows 10 Enterprise
     * **Browser:** Firefox Browser Developer
     * **Version:** 85.0b1 (64-bit)
-* **Priority:** Minor
+* **Priority:** MINOR
 * **Status:** New
-* **Severity:** Trivial (Validate with the PO)
-* **Expected:** Pressing the button like with the arrow icon performs the caculations (same action as clickin the green button)
+* **Severity:** TRIVIAL (Validate with the PO)
+* **Expected:** Clicking on the arrow icon should perform the calculation (same action as click on the green button)
 * **Current:** No action performed
-* **Type:** Functional | UI (needs confirmation)
+* **Type:** Functional
 
 ### Steps to reproduce:
 
 1. Open any browser
 2. Navigate to this url: http://qainterview.pythonanywhere.com/
-3. Click on the Input text where it says: "Enter an Integer"
+3. Click on the input field where it says: "Enter an Integer"
 4. Enter a positive integer number lower than 10. (i.e: 5)
-5. Click the arrow button like in the left of the input text
-6. **Expected:** Some type of action OR other type of element not similar to a button
-7. **Current:** no actions performed
+5. Click the arrow icon on the left of the input field
+6. **Expected:** Complete the calculation
+7. **Current:** no actions observed
 
 ### Attachments:
 
@@ -338,8 +336,7 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 
 
 
-## Bug 8: Favicon cann't be loaded 404 - NOT FOUND
-
+## Bug 9: (Server) Favicon cannot be loaded 404 - NOT FOUND
 
 ### Information
 
@@ -372,8 +369,7 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 <img src="/bug-report/images/favicon_404.png" width="650px">
 
 
-## Bug 9: http over https - Connection no Secure | Missing redirect from http to https
-
+## Bug 10: (Server) http over https - Connection no Secure | Missing redirect from http to https
 
 ### Information
 
@@ -390,22 +386,21 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 * **Severity:** CRITICAL
 * **Expected:** A secure connection with HTTPS (missing redirect) 
 * **Current:** HTTP connection
-* **Type:** No Functional | Infraestructure
+* **Type:** No Functional | Infrastructure
 
 ### Steps to reproduce:
 
 1. Open any browser
 2. Navigate to this url: http://qainterview.pythonanywhere.com/
-3. **Expected:** Redirect to http://qainterview.pythonanywhere.com/
-4. **Current:** no redirect performed and the user stays in the no secure http
+3. **Expected:** Redirect to https://qainterview.pythonanywhere.com/
+4. **Current:** no redirect happens, and the user stays in the no secure http
 
 ### Attachments:
 
 <img src="/bug-report/images/connection_no_secure_http.png" width="650px">
 
 
-## Bug 10: Terms and Conditions link redirects to the wrong page 
-
+## Bug 11: (UI) Terms and Conditions link id redirecting to the wrong page
 
 ### Information
 
@@ -421,7 +416,7 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 * **Status:** New
 * **Severity:** MINOR
 * **Expected:**  Clicking on 'Terms and Conditions' should redirect to /terms
-* **Current:** Clicking on 'Terms and Conditions' link redirect to /privacy
+* **Current:** Clicking on 'Terms and Conditions' link is redirecting to /privacy
 * **Type:** Functional
 
 ### Steps to reproduce:
@@ -430,15 +425,14 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 2. Navigate to this url: http://qainterview.pythonanywhere.com/
 3. Click on the link 'Terms and Conditions'
 3. **Expected:** Clicking on 'Terms and Conditions' should redirect to /terms
-4. **Current:** Clicking on 'Terms and Conditions' link redirect to /privacy
+4. **Current:** Clicking on 'Terms and Conditions' link is redirecting to /privacy
 
 ### Attachments:
 
 <img src="/bug-report/images/terms_and_conditions_link.gif" width="650px">
 
 
-## Bug 10: Privacy link redirects to the wrong page 
-
+## Bug 12: (UI) Privacy link is redirecting to the wrong page
 
 ### Information
 
@@ -454,7 +448,7 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 * **Status:** New
 * **Severity:** MINOR
 * **Expected:**  Clicking on 'Privacy' should redirect to /privacy
-* **Current:** Clicking on 'Privacy' link redirect to /terms
+* **Current:** Clicking on 'Privacy' link is redirecting to /terms
 * **Type:** Functional 
 
 ### Steps to reproduce:
@@ -463,13 +457,13 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 2. Navigate to this url: http://qainterview.pythonanywhere.com/
 3. Click on the link 'Privacy'
 4. **Expected:** Clicking on 'Privacy' should redirect to /privacy
-5. **Current:** Clicking on 'Privacy' link redirect to /terms
+5. **Current:** Clicking on 'Privacy' link is redirecting to /terms
 
 ### Attachments: 
 
 <img src="/bug-report/images/links_cause.png" width="650px">
 
-## Bug 11: UI color change with iExplorer 11
+## Bug 13: (UI) Title color change with iExplorer 11
 
 ### Information
 
@@ -503,26 +497,27 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 
 # Lighthouse Analysis Report
 
-Using the Lighthouse automated tool developed by Google, we can have more quality details.
+Using the Lighthouse automated tool, developed by Google, we can have more quality details.
 
-After analyze http://qainterview.pythonanywhere.com/ the report presents a brief information with indicators
+The report analysis presents its information with indicators, and interesting points to consider.
 
 <img src="/bug-report/images/lighthouse_1.png" width="650px">
 
-One helpful feature is the javascript analyzer wich can tell us about some vulnerabilities in the app.
+One helpful feature is the javascript analyzer which can tell us about some vulnerabilities in the app.
 
 <img src="/bug-report/images/lighthouse_2.png" width="650px">
 
 # Suggested Improvements
 
-**1. Server Response:** Instead of a response with the raw result number of the factorial calculation, sent an already formated number with scientific notation. This could prevent the Infinity Bug caused by javascript when tries to parse the response number.
+**1. Server Response:** Instead of a factorial response with the raw result number, would be a good option to, send an already formatted result with scientific notation. This could prevent the Infinity Bug caused by javascript when tries to parse the response number.
 
-**2. Result position and size:** Currently the response includes a text plus the actual result number. As it is, is difficult to read. My suggestion is, present the result with a bigger font, without the text and between the title and the input field. Like in this image:
+**2. Result position and size:** Currently the UI displays the response with a text, and the result number. As it is, is difficult to read. My suggestion is, present the result with a bigger font, without the text and between the title and the input field. Like in this image:
 
 <img src="/bug-report/images/suggestion.png" width="650px">
 
 
 # Next Steps
-Depending on the priority/severity a bug report can be added into the sprint to be fixed under a Hot-Fix process. If this isn't the case, a bug would be added to the Backlog to be selected, analysed, stimated and added to the next Sprint backlog to be worked.
 
-Its considered a good practice add one test case per bug found. So this test case would be part of the sanity check after the fix was made. Then could be part of the next set of tests for a Regression over the system.
+Depending on the priority/severity of a reported bug, it can be added into the current sprint to be fixed (Hot-Fix). If isn't the case, a bug ticket will be added to the Backlog. Next it goes throught a selection process, analysis, estimation and finally is added to the next Sprint Backlog to be worked.
+
+It is considered a good practice add one test case per bug found. Then, this test case will be part of the Sanity Check after the bug fix was made. Also, could be part of the next set of Regression tests over the system.
