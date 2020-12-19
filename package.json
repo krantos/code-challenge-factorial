@@ -6,14 +6,12 @@
   "scripts": {
     "test": "test",
     "cypress:open": "cypress open",
-    "report:merge": "mochawesome-merge --reportDir cypress/results/json > cypress/results/mochawesome-bundle.json",
-    "report:generate": "marge cypress/results/mochawesome-bundle.json -o cypress/reports/html & npm run report:html",
-    "report:html": "mv cypress/reports/html/cypress/results/mochawesome*.html cypress/reports/html",
-    "report:copyScreenshots": "cp -r cypress/screenshots cypress/reports/html/screenshots",
-    "report-linux": "",
-    "report-mac": "",
-    "report-windows": "node cypress/cucumber-json/html-report-generator.js && npm run open-report",
-    "open-report": "start cypress/cucumber-json/report/index.html"
+    "report": "run-s report:*",
+    "report:merge": "mochawesome-merge ./cypress/result/json/*.json > ./cypress/result/mochawesome-bundle.json",
+    "report:generate": "marge ./cypress/result/mochawesome-bundle.json -o cypress/report/index -i",
+    "report:copyScreenshots": "cp -r cypress/screenshots cypress/report/",
+    "ui:report": "node cypress/cucumber-json/html-report-generator.js",
+    "clean:reports": "rm -rf cypress/screenshots cypress/cucumber-json/*.json cypress/cucumber-json/report cypress/result cypress/report"
   },
   "repository": {
     "type": "git",
@@ -47,5 +45,7 @@
       "fileSuffix": ".cucumber"
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
+  }
 }
