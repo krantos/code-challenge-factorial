@@ -6,7 +6,7 @@ Here are the bugs found while testing the web application *The Greatest Factoria
 
 [Suggeested Improvemts](#suggested-improvements)
 
-[Next Steps...](#next-steps...)
+[Next Steps...](#next-steps)
 
 ### App description
 
@@ -508,7 +508,7 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 <img src="/bug-report/images/suggestion.png" width="650px">
 
 
-# Next Steps...
+# Next Steps
 Depending on the priority/severity a bug report can be added into the sprint to be fixed under a Hot-Fix process. If this isn't the case, a bug would be added to the Backlog to be selected, analysed, stimated and added to the next Sprint backlog to be worked.
 
 Its considered a good practice add one test case per bug found. So this test case would be part of the sanity check after the fix was made. Then could be part of the next set of tests for a Regression over the system.
