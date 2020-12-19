@@ -4,6 +4,8 @@ Here are the bugs found while testing the web application *The Greatest Factoria
 
 [Bugs Found](#bugs-found)
 
+[Lighthouse Analysis Report](#lighthouse-report)
+
 [Suggeested Improvemts](#suggested-improvements)
 
 [Next Steps...](#next-steps)
@@ -498,6 +500,18 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 
 <img src="/bug-report/images/iExplorer_diff.png" width="650px">
 
+
+# Lighthouse Analysis Report
+
+Using the Lighthouse automated tool developed by Google, we can have more quality details.
+
+After analyze http://qainterview.pythonanywhere.com/ the report presents a brief information with indicators
+
+<img src="/bug-report/images/lighthouse_1.png" width="650px">
+
+One helpful feature is the javascript analyzer wich can tell us about some vulnerabilities in the app.
+
+<img src="/bug-report/images/lighthouse_2.png" width="650px">
 
 # Suggested Improvements
 

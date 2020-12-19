@@ -10,9 +10,7 @@
     "report:generate": "marge cypress/results/mochawesome-bundle.json -o cypress/reports/html & npm run report:html",
     "report:html": "mv cypress/reports/html/cypress/results/mochawesome*.html cypress/reports/html",
     "report:copyScreenshots": "cp -r cypress/screenshots cypress/reports/html/screenshots",
-    "report-linux": "",
-    "report-mac": "",
-    "report-windows": "node cypress/cucumber-json/html-report-generator.js && npm run open-report",
+    "report": "node cypress/cucumber-json/html-report-generator.js && npm run open-report",
     "open-report": "start cypress/cucumber-json/report/index.html"
   },
   "repository": {
