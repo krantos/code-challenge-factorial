@@ -1,4 +1,4 @@
-# Report and Process
+# Bug Report and Process
 
 Here are the bugs found while testing the web application *The Greatest Factorial Calculator*
 
