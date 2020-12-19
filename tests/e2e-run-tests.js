@@ -9,7 +9,7 @@ cypress.run({
   },
   screenshotsFolder: 'cypress/screenshots/',
   testFiles: "**/*.{feature,features}",
-  headless: true,
+  browser: 'chrome',
   spec: './cypress/integration/challenge/**.feature',
   config: {
     baseUrl: 'http://qainterview.pythonanywhere.com/',
