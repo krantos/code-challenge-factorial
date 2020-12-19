@@ -2,11 +2,13 @@ const cypress = require('cypress');
 
 cypress.run({
   reporter: 'cypress-multi-reporters',
+  configFile: 'cypress-2.json',
   reporterOptions: {
-    configFile: 'tests/reporter-config.json'
+    configFile: './tests/reporter-config.json'
   },
   screenshotsFolder: 'cypress/screenshots/',
-  headless: true,
+  testFiles: "**/*.js",
+  browser: 'firefox',
   spec: 'cypress/integration/mocked-server/*',
   config: {
     baseUrl: 'http://qainterview.pythonanywhere.com/',
