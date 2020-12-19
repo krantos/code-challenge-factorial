@@ -6,11 +6,12 @@
   "scripts": {
     "test": "test",
     "cypress:open": "cypress open",
+    "report": "run-s report:*",
     "report:merge": "mochawesome-merge ./cypress/result/json/*.json > ./cypress/result/mochawesome-bundle.json",
-    "report:generate": "marge ./cypress/result/mochawesome-bundle.json -o cypress/report/index -i & npm run report:copyScreenshots",
+    "report:generate": "marge ./cypress/result/mochawesome-bundle.json -o cypress/report/index -i",
     "report:copyScreenshots": "cp -r cypress/screenshots cypress/report/",
-    "report": "node cypress/cucumber-json/html-report-generator.js",
-    "report:clean": "rm cypress/cucumber-json/*.json & rm -r cypress/cucumber-json/report & rm -r cypress/result & rm -r cypress/report & rm -r cypress/screenshots"
+    "ui:report": "node cypress/cucumber-json/html-report-generator.js",
+    "clean:reports": "rm -rf cypress/screenshots cypress/cucumber-json/*.json cypress/cucumber-json/report cypress/result cypress/report"
   },
   "repository": {
     "type": "git",

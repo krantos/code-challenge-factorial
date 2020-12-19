@@ -5,7 +5,7 @@ const path = require('path');
 cypress.run({
   reporter: 'cypress-multi-reporters',
   reporterOptions: {
-    configFile: 'tests/reporter-config.json'
+    configFile: './tests/reporter-config.json'
   },
   screenshotsFolder: 'cypress/screenshots/',
   testFiles: "**/*.{feature,features}",
