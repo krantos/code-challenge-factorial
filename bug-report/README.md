@@ -3,10 +3,13 @@
 Here are the bugs found while testing the web application *The Greatest Factorial Calculator*
 
 [Bugs Found](#bugs-found)
+
 [Suggeested Improvemts](#suggested-improvements)
+
 [Next Steps...](#next-steps...)
 
 ### App description
+
 **Main functionality** 
 
 Calculate the factorial of the given number
@@ -40,9 +43,9 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 
 ---
 # Bugs Found
-***
+
 ## Bug 1: Web app cannot parse server result response for a range of numbers (between 170 and 990) 
-***
+
 * **Reporter:** Marcos
 * **Date:** 12/18/2020
 * **Product:** Factorial Calculator
@@ -73,9 +76,9 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 ### Attachments/
 <img src="/bug-report/images/bug-1.gif" width="650px">
 
-***
+
 ## Bug 2: Internal Server Error when a negative number is sent to calculate
-***
+
 
 * **Reporter:** Marcos
 * **Date:** 12/18/2020
@@ -110,9 +113,9 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 
 <img src="/bug-report/images/bug-2.png" width="650px">
 
-***
+
 ## Bug 3: Internal Server Error when integers greater than 989 are entered to calculate 
-***
+
 
 * **Reporter:** Marcos
 * **Date:** 12/18/2020
@@ -145,9 +148,9 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 <img src="/bug-report/images/bug-3.gif" width="650px">
 
 
-***
+
 ## Bug 3: No error message while entering a negative number for factorial calculation
-****
+
 
 ### Information
 
@@ -183,9 +186,9 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 
 <img src="/bug-report/images/bug-4.gif" width="650px">
 
-****
+
 ## Bug 4: Console is loggin development info
-****
+
 
 ### Information
 
@@ -228,9 +231,9 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 
 <img src="/bug-report/images/bug-5.gif" width="650px">
 
-****
+
 ## Bug 5: Typo in the Page Title
-****
+
 
 ### Information
 
@@ -261,9 +264,9 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 
 <img src="/bug-report/images/title.png" width="750px">
 
-****
+
 ## Bug 6: Pressing Intro after enter a number doesn't produce an action
-****
+
 
 ### Information
 
@@ -296,9 +299,9 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 
 <img src="/bug-report/images/intro_key.gif" width="750px">
 
-****
+
 ## Bug 7: Arrow button like icon simulates a Button but doesn't perform any action (could be a bug - needs confirmation)
-****
+
 
 ### Information
 
@@ -332,9 +335,9 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 <img src="/bug-report/images/arrow_button_like.gif" width="650px">
 
 
-****
+
 ## Bug 8: Favicon cann't be loaded 404 - NOT FOUND
-****
+
 
 ### Information
 
@@ -366,9 +369,9 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 
 <img src="/bug-report/images/favicon_404.png" width="650px">
 
-****
+
 ## Bug 9: http over https - Connection no Secure | Missing redirect from http to https
-****
+
 
 ### Information
 
@@ -398,9 +401,9 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 
 <img src="/bug-report/images/connection_no_secure_http.png" width="650px">
 
-****
+
 ## Bug 10: Terms and Conditions link redirects to the wrong page 
-****
+
 
 ### Information
 
@@ -431,9 +434,9 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 
 <img src="/bug-report/images/terms_and_conditions_link.gif" width="650px">
 
-****
+
 ## Bug 10: Privacy link redirects to the wrong page 
-****
+
 
 ### Information
 
@@ -464,10 +467,7 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 
 <img src="/bug-report/images/links_cause.png" width="650px">
 
-
-****
 ## Bug 11: UI color change with iExplorer 11
-****
 
 ### Information
 
@@ -498,7 +498,7 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 
 <img src="/bug-report/images/iExplorer_diff.png" width="650px">
 
-***
+
 # Suggested Improvements
 
 **1. Server Response:** Instead of a response with the raw result number of the factorial calculation, sent an already formated number with scientific notation. This could prevent the Infinity Bug caused by javascript when tries to parse the response number.
@@ -507,7 +507,7 @@ Each Expected behavior/ui made for each bug, is only a suggestion. Those suggest
 
 <img src="/bug-report/images/suggestion.png" width="650px">
 
-***
+
 # Next Steps...
 Depending on the priority/severity a bug report can be added into the sprint to be fixed under a Hot-Fix process. If this isn't the case, a bug would be added to the Backlog to be selected, analysed, stimated and added to the next Sprint backlog to be worked.
 
