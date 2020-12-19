@@ -13,7 +13,7 @@
 
 ### Description: 
 
-The main function of the system is calculate the factorial of the given number.
+The main function of the system is to calculate the factorial of the given number.
 
 `https://qainterview.pythonanywhere.com/`
 
